@@ -1,0 +1,19 @@
+;LABEL 	DIRECTIVE 	VALUE COMMENT
+			AREA 		delay150, READONLY, CODE
+			THUMB
+			EXPORT		DELAY
+
+DELAY		PROC
+			PUSH		{LR, R0}
+			MOV32		R0, #301202		
+AGAIN 	
+			NOP
+			NOP
+			SUBS 		R0,R0,#1
+			BNE 		AGAIN
+			POP			{LR, R0}
+			BX 			LR
+			ENDP
+	
+			ALIGN
+			END
